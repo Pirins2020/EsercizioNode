@@ -1,7 +1,20 @@
+const express = require("express");
+const router = express.Router();
+const {weatherController} = require("../controllers/weathercontroller"); // Importa il controller per gestire le richieste
+
+    
+// Definisce la route POST per ottenere le informazioni meteo di una città.
+router.post("/weather", weatherController); // Associa il controller alla route POST /api/v1/weather
+
+module.exports = router;
+
 //logica di gestione del post della pagine weather[cite: 3]
 
 //const fetch = require("node-fetch");// da installare npm install node-fetch@2 -->[cite: 3]
 //fetch è una funzione che permette di fare richieste HTTP (GET, POST, PUT, DELETE) ver...[cite: 3]
+
+
+/*
 const { getWeather } = require("../utils/apiClient");
 const normalizeWeather = require("../utils/normalizeWeather");
 const { validateCity } = require("../utils/validateCity");
@@ -32,3 +45,5 @@ exports.weatherController = async (req, res) => {
         logError(err);
         res.json({ error: true, message: "Errore nel server" });
     }};
+    
+    */
