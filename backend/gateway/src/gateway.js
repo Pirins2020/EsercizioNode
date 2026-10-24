@@ -5,6 +5,14 @@ const config = require("../config/env");
 const app = express();
 
 
+app.use("/api/v1/auth", createProxyMiddleware({ //tutte le richieste auth vengono gestite qui
+    target: config.AUTH_SERVICE_URL,
+    changeOrigin: true,
+    pathRewrite: {
+        "^/api/v1/auth": ""
+    }
+}));
+
 app.use("/api/v1", createProxyMiddleware({ //tutte le richieste api vengono gestite qui
     target: config.SERVICE_URL,
     changeOrigin: true,
