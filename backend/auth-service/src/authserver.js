@@ -34,6 +34,6 @@ app.use(passport.session());
 
 app.use("/", googleAuthRoutes);
 
-app.listen(env.AUTH_PORT, () => {
-  console.log(`Auth Server avviato sulla porta ${env.AUTH_PORT}`);
+app.listen(env.port, () => {
+  console.log(`Auth Server avviato sulla porta ${env.port}`);
 });
